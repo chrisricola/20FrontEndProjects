@@ -18,18 +18,36 @@
             <line x1="20" y1="230" x2="100" y2="230"  />
 
         <!-- Head -->
-        <circle cx="140" cy="70" r="20" />
+        <circle cx="140" cy="70" r="20" class="figure-part"/>
         <!-- body -->
-        <line x1="140" y1="90" x2="140" y2="150"  />
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
         <!-- Arm -->
-        <line x1="140" y1="120" x2="120" y2="100"  />
-        <line x1="140" y1="120" x2="160" y2="100"  />
+        <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
+        <line x1="140" y1="120" x2="160" y2="100"  class="figure-part"/>
         <!-- legs -->
-        <line x1="140" y1="150" x2="120" y2="180"  />
-        <line x1="140" y1="150" x2="160" y2="180"  />
+        <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+        <line x1="140" y1="150" x2="160" y2="180"  class="figure-part"/>
         </svg>
+
+        <div class="wrong-letters-container">
+            <div id="wrong-letters"></div>
+        </div>
+
+        <div class="word" id="word"></div>
     </div>
 
+    <!-- final message container -->
+    <div class="popup-container" id="pop-container">
+        <div class="popup">
+            <h2 id="final-message"></h2>
+            <button id="play-button">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification-container" id="notification-container">
+        <p>You have already entered this letter</p>
+    </div>
 
     <script src="./script.js"></script>
 </body>
