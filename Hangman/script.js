@@ -31,9 +31,52 @@ function displayWord() {
     const innerWord = wordEl.innerText.replace(/\n/g, '');
 
     if(innerWord === selectedWord) {
-        finalMessage.innerText = 'Congrats! You Won!';
-        popup.style.display = 'flex';
+        finalMessage.innerText = 'Congratulations! You won! 😃';
+		finalMessageRevealWord.innerText = '';
+		popup.style.display = 'flex';
+
+		playable = false;
     }
 }
+
+//Update the wrong letters
+function updateWrongLettersEl() {
+    console.log('Update wrong');
+}
+
+// show noti
+function showNotification() {
+    notification.classList.add('show');
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 2000);
+}
+
+window.addEventListener('keydown', e=> {
+    // console.log(e.keyCode);
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+        const letter = e.key;
+
+        if(selectedWord.includes(letter)) {
+            if(!correctLetters.includes(letter)) {
+                correctLetters.push(letter);
+
+                displayWord();
+            } else {
+                showNotification();
+            }
+        } else {
+            if(!wrongLetters.includes(letter)) {
+                wrongLetters.push(letter);
+
+                updateWrongLettersEl();
+            } else {
+                showNotification();
+            }
+        }
+    }
+    
+});
 
 displayWord();
