@@ -33,7 +33,7 @@ input, button {
 
 input[type='text'] {
     width: 300px;
-}
+  }
 
 .search-btn {
     cursor: pointer;
